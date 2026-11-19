@@ -1,0 +1,24 @@
+# Python 虚拟环境（绝对不能提交，体积大且不可移植）
+.venv/
+venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# 环境变量与密钥（重要：防止误传 API Key）
+.env
+.env.*
+*.key
+
+# IDE 与系统文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 评估报告中的临时产物（保留最终报告，忽略运行缓存）
+*.log
