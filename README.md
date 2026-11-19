@@ -39,6 +39,24 @@ cd project-a-rag-qa
 
 当前状态：22 passed（D1 脚手架）。
 
+## 每日 Git 工作流（结束一天工作时执行）
+
+```bash
+# 在项目根目录，Git Bash 或 PowerShell
+git add -A                        # 暂存所有改动
+git commit -m "说明今天做了什么"   # 提交到本地仓库
+git push                          # 推送到 GitHub
+```
+
+常见问题速查：
+
+| 现象 | 处理 |
+|---|---|
+| push 卡住不动超过 2 分钟 | Ctrl + C 取消后重试，或检查网络 |
+| push 提示 rejected / non-fast-forward | 先执行 `git pull` 再 `git push` |
+| 改完忘了 commit 就 push | 无影响，重新执行每日三命令即可 |
+| 不确定当前状态 | 执行 `git status`，看提示操作 |
+
 ## 路线图
 
 详见桌面 `AI测试工程师8周详细计划.md`（8 周，从 Python/pytest 基础到作品集发布）。
