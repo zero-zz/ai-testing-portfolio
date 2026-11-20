@@ -45,6 +45,18 @@
 
 ### D2 · 2026-11-20（周五）
 
-- 待执行：块1 Python 列表/字典 → 块2 写 `load_cases()` → 块3 if/for/函数 → 块4 第一个测试
-- 训练：力量 A（昨天顺延）
-- 求职：无（按周节奏周五为本项目日）
+- **项目**：✅ 完成，`python -m pytest -q` → **24 passed**
+  - 新建 `tests/test_d2_practice.py`：独立重写 `load_cases()` + 新增 `test_case_risk_is_valid()`
+  - 采用「填空版 → 订正版」路径（纯盲写卡住后降级为主动回忆 + 允许查参考再合上重写）
+- **当天吃透的知识点**：系统 Python 与 `.venv` 隔离、pytest 入口（`python -m pytest`）、`Path(__file__).parent.parent`、`with` 上下文管理、`csv.DictReader`、`assert` 双向语义、`.get()` 与 `KeyError`、falsy、f-string、`case.get('id','?')` 默认值
+- **🐛 真实缺陷闭环 #1（数据质量类）**
+  - 现象：`test_case_risk_is_valid` 首次运行 FAIL → `用例 TC007 的 risk 非法: 可被 json.loads 解析且含 protocol 和 port 字段`
+  - 定位：`cases.csv` 的 `TC007` 的 input 含未转义逗号 `{protocol: RADIUS, port: 1812}`，CSV 误判为列分隔符，整行右移一格
+  - 根因：CSV 字段内逗号未用双引号包裹；另有表头/行尾多余逗号产生空列
+  - 修复：给字段加引号、去掉多余尾逗号
+  - 回归：`24 passed`。**该缺陷是旧测试（只校验字段非空）漏掉的，由新增断言首次发现** —— 可作为作品集第一个「发现→定位→修复→回归」证据链
+  - 注：此为数据层缺陷，非 RAG 系统缺陷；W5 要求的 3 个系统缺陷仍待补
+- **Git/GitHub**：D2 产出已 commit + push
+- **训练**：力量 A（D1 顺延）⚠️ 待确认
+- **求职**：无（按周节奏周五为本项目日）
+- **身体数据**：起始体重/腰围待首次晨测
