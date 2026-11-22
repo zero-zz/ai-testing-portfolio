@@ -91,4 +91,5 @@
   - 踩坑补遗：`.strip()` 防纯空格伪非空；`ids` 列表推导式；装饰器 `@` 语法
   - **TC021 去留已定：保留**——内容为「EAP/CHAP/PAP 对比表」正经用例，非 D2 修复残留；cases.csv 确认 21 条（TC001–TC021）
   - 21 个测试独立执行（`test_case_fields_not_empty[TCxxx]`），失败隔离达成
+- **Git/GitHub（D4）**：✅ push 成功，远程 main = **de5e6a7**（`78918e1..de5e6a7`，经 `git ls-remote` 验证）。收工三命令踩坑：① `commit` 漏敲 `git` 前缀；② push 报 `Failed to connect via 127.0.0.1`——仓库本地代理配的 7890 端口无程序监听（代理工具未开），启动工具后重推成功
 - **晨测**：周日无晨测（周一/三/五提醒体重腰围）
